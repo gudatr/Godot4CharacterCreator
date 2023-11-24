@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/hooded_sweat_jacket_albedo.png" id="1_ppu6t"]
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/hooded_sweat_jacket_normals.png" id="2_4bu0j"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_ppu6t")
+metallic = 0.26
+metallic_specular = 0.41
+roughness = 0.82
+normal_enabled = true
+normal_texture = ExtResource("2_4bu0j")

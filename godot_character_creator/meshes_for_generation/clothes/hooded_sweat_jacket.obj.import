@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfl44364hpggu"
+path="res://.godot/imported/hooded_sweat_jacket.obj-343304cbb394568d6e1fcedefe95d052.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hooded_sweat_jacket.obj-343304cbb394568d6e1fcedefe95d052.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/hooded_sweat_jacket.obj"
+dest_files=["res://.godot/imported/hooded_sweat_jacket.obj-343304cbb394568d6e1fcedefe95d052.mesh", "res://.godot/imported/hooded_sweat_jacket.obj-343304cbb394568d6e1fcedefe95d052.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.104, 0.1, 0.102)
+offset_mesh=Vector3(2.08165e-12, 0.885, 0.005)
+optimize_mesh=false
+force_disable_mesh_compression=true

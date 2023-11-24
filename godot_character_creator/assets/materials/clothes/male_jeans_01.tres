@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/male_jeans_01_albedo.png" id="1_g0sbe"]
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/male_jeans_01_normals.png" id="2_yat36"]
+
+[resource]
+albedo_texture = ExtResource("1_g0sbe")
+normal_enabled = true
+normal_texture = ExtResource("2_yat36")

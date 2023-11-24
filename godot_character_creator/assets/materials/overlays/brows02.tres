@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://duj3cwf6ok6a1"]
+
+[ext_resource type="Texture2D" uid="uid://dbymd7t3s1ypc" path="res://godot_character_creator/assets/textures/overlays/brows02.png" id="1_l02b0"]
+
+[resource]
+albedo_texture = ExtResource("1_l02b0")

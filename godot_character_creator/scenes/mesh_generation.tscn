@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvrlwofkixqca"]
+
+[ext_resource type="Script" path="res://godot_character_creator/scripts/editor/MeshGeneration.cs" id="1_iayvt"]
+
+[node name="generate" type="Node"]
+script = ExtResource("1_iayvt")
+clothesBlendShapes = Array[String](["body/teeth", "body/eyes"])
+clothesGeneration = Array[String](["clothes/monks_hood", "clothes/tunicviking", "hair/hair01", "hair/hair02", "hair/hair03", "hair/hair04", "hair/hair05", "hair/hair06", "hair/hair07", "hair/hair08", "hair/hair09", "hair/hair10", "hair/hair11", "hair/hair12", "hair/hair13", "hair/hair14", "hair/hair15", "hair/hair16", "hair/hair17", "hair/hair18", "hair/hair19", "hair/hair20", "hair/hair21", "hair/hair22", "hair/hair23", "hair/hair24", "hair/hair25", "hair/hair26", "hair/hair27", "hair/hair28", "hair/hair29", "hair/hair30", "hair/hair31", "hair/hair32", "hair/hair33", "hair/hair34", "body/eyelashes", "clothes/hooded_sweat_jacket", "clothes/boho_top", "clothes/lusekofta", "clothes/cardigan_long_open_front", "clothes/offshoulder_top", "clothes/shirt_tie_tucked", "clothes/sweater_knitted"])
+clothesNormal = Array[String](["body/tongue", "clothes/male_jeans_01", "clothes/male_shirt_01", "clothes/dress_mini_03"])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 65.0
+offset_right = 1609.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 51
+text = "Godot Character Creator - Mesh Generation in Progress
+"
+
+[node name="label_processing" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 484.0
+offset_right = 488.0
+offset_bottom = 534.0
+theme_override_font_sizes/font_size = 36
+text = "Currently Processing"
+
+[node name="processing" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 581.0
+offset_right = 407.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 28
+
+[node name="label_timestamps" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 209.0
+offset_right = 1230.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 36
+text = "Processed:"
+
+[node name="Camera2D" type="Camera2D" parent="Control"]
+offset = Vector2(960, 540)
+
+[node name="scroll_container" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 275.0
+offset_right = 1912.0
+offset_bottom = 1068.0
+
+[node name="box_container" type="VBoxContainer" parent="Control/scroll_container"]
+layout_mode = 2
+
+[node name="timestamps" type="Label" parent="Control/scroll_container/box_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20

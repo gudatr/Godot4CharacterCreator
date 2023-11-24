@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ccs8a630c8t1c"
+path="res://.godot/imported/boho_top.obj-60643006d7a81c28cb6bed95370e2193.mesh"
+
+[deps]
+
+files=["res://.godot/imported/boho_top.obj-60643006d7a81c28cb6bed95370e2193.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/boho_top.obj"
+dest_files=["res://.godot/imported/boho_top.obj-60643006d7a81c28cb6bed95370e2193.mesh", "res://.godot/imported/boho_top.obj-60643006d7a81c28cb6bed95370e2193.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.096, 0.1, 0.105)
+offset_mesh=Vector3(2.08165e-12, 0.745, 2.08165e-12)
+optimize_mesh=false
+force_disable_mesh_compression=true

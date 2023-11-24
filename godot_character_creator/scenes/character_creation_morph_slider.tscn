@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqaa8y7fkr32h"]
+
+[ext_resource type="Script" path="res://godot_character_creator/scripts/editor/CharacterMorphSlider.cs" id="1_w4c2f"]
+
+[node name="Label" type="Label"]
+offset_right = 96.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 16
+text = "fat
+"
+script = ExtResource("1_w4c2f")
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 200.0
+offset_bottom = 52.0
+max_value = 1.0
+step = 0.01
+ticks_on_borders = true
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ndyr6phqt5yx"
+path="res://.godot/imported/monks_hood.obj-bd55912a802e8c23dc50a26a15896e93.mesh"
+
+[deps]
+
+files=["res://.godot/imported/monks_hood.obj-bd55912a802e8c23dc50a26a15896e93.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/monks_hood.obj"
+dest_files=["res://.godot/imported/monks_hood.obj-bd55912a802e8c23dc50a26a15896e93.mesh", "res://.godot/imported/monks_hood.obj-bd55912a802e8c23dc50a26a15896e93.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.1, 0.1, 0.1)
+offset_mesh=Vector3(2.08165e-12, 0.8, 2.08165e-12)
+optimize_mesh=false
+force_disable_mesh_compression=true

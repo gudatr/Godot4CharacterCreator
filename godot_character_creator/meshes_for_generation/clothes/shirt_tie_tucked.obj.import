@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e5n01i5ja4w5"
+path="res://.godot/imported/shirt_tie_tucked.obj-e624e618ace00d20a98cd9b3876b20a1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shirt_tie_tucked.obj-e624e618ace00d20a98cd9b3876b20a1.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/shirt_tie_tucked.obj"
+dest_files=["res://.godot/imported/shirt_tie_tucked.obj-e624e618ace00d20a98cd9b3876b20a1.mesh", "res://.godot/imported/shirt_tie_tucked.obj-e624e618ace00d20a98cd9b3876b20a1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.099, 0.101, 0.118)
+offset_mesh=Vector3(2.08165e-12, 0.735, 2.08165e-12)
+optimize_mesh=false
+force_disable_mesh_compression=true

@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Character Creator"
+run/main_scene="res://godot_character_creator/scenes/character_creation_example.tscn"
+config/features=PackedStringArray("4.2", "C#")
+config/icon="res://icon.png"
+
+[audio]
+
+buses/default_bus_layout=""
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Character Editor"
+
+[gui]
+
+theme/default_theme_scale=1.5
+theme/size/viewport_height=1080
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_environment="res://default_env.tres"

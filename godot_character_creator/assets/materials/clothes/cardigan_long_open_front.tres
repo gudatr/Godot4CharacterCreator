@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/cardigan_long_open_front_albedo.png" id="1_5cy3u"]
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/cardigan_long_open_front_normals.png" id="2_hs52x"]
+
+[resource]
+albedo_texture = ExtResource("1_5cy3u")
+normal_enabled = true
+normal_texture = ExtResource("2_hs52x")

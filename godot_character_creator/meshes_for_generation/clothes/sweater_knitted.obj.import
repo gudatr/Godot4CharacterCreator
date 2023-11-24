@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1r5fks7jferl"
+path="res://.godot/imported/sweater_knitted.obj-6d809d1089df73a1b98085ff50ba634f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sweater_knitted.obj-6d809d1089df73a1b98085ff50ba634f.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/sweater_knitted.obj"
+dest_files=["res://.godot/imported/sweater_knitted.obj-6d809d1089df73a1b98085ff50ba634f.mesh", "res://.godot/imported/sweater_knitted.obj-6d809d1089df73a1b98085ff50ba634f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.11, 0.125, 0.129)
+offset_mesh=Vector3(2.08165e-12, 0.69, 2.08165e-12)
+optimize_mesh=false
+force_disable_mesh_compression=true

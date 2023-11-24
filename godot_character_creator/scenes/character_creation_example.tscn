@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://de8yquba13vyd"]
+
+[ext_resource type="Script" path="res://godot_character_creator/scripts/editor/CharacterCreationExample.cs" id="1_w4c2f"]
+[ext_resource type="Script" path="res://godot_character_creator/scripts/editor/CharacterData.cs" id="2_67q3q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pumpk"]
+ground_bottom_color = Color(0.368627, 0.321569, 0.262745, 1)
+
+[sub_resource type="Sky" id="Sky_1m1vs"]
+sky_material = SubResource("ProceduralSkyMaterial_pumpk")
+
+[sub_resource type="Environment" id="Environment_yicuc"]
+background_mode = 2
+sky = SubResource("Sky_1m1vs")
+ssao_enabled = true
+ssao_radius = 0.06
+ssao_intensity = 11.65
+ssao_detail = 5.0
+ssao_horizon = 0.0
+ssao_sharpness = 0.0
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 0.37
+ssil_enabled = true
+
+[node name="Node" type="Node"]
+script = ExtResource("2_67q3q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yicuc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.797875, 0.396739, 0.453865, -0.5991, 0.605407, 0.523986, -0.0668877, -0.689986, 0.720725, 0, 0, 0)
+light_energy = 0.95
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_normal_bias = 0.05
+shadow_reverse_cull_face = true
+shadow_blur = 4.085
+directional_shadow_split_1 = 0.145
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.79
+directional_shadow_max_distance = 7.0
+directional_shadow_pancake_size = 0.0
+
+[node name="CharacterCreationExample" type="Node3D" parent="."]
+script = ExtResource("1_w4c2f")

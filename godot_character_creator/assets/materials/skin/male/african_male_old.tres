@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://be20r8ltqvk7p"]
+
+[ext_resource type="Texture2D" uid="uid://ctnke3r42v7wq" path="res://godot_character_creator/assets/textures/skin/male/african_male_old.png" id="1_4s6wi"]
+[ext_resource type="Texture2D" uid="uid://bkpylwke1rujv" path="res://godot_character_creator/assets/textures/skin/details/skin.tres" id="2_laage"]
+
+[resource]
+transparency = 2
+albedo_texture = ExtResource("1_4s6wi")
+metallic = 0.2
+metallic_specular = 0.7
+roughness = 0.65
+normal_enabled = true
+normal_texture = ExtResource("2_laage")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.65
+subsurf_scatter_skin_mode = true

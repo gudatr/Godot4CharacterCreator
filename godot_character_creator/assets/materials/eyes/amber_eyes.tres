@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6mtwohq3djrl"]
+
+[ext_resource type="Texture2D" uid="uid://clr2203bulfxo" path="res://godot_character_creator/assets/textures/eyes/amber_eyes.png" id="1_pj0jy"]
+
+[resource]
+albedo_texture = ExtResource("1_pj0jy")
+metallic = 0.45
+metallic_specular = 0.65
+roughness = 0.29

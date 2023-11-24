@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cftd8peatyfix"
+path="res://.godot/imported/hair19.obj-c1bc226eb07a0b83f411f12fb04ef0d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hair19.obj-c1bc226eb07a0b83f411f12fb04ef0d1.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/hair/hair19.obj"
+dest_files=["res://.godot/imported/hair19.obj-c1bc226eb07a0b83f411f12fb04ef0d1.mesh", "res://.godot/imported/hair19.obj-c1bc226eb07a0b83f411f12fb04ef0d1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.1, 0.1, 0.11)
+offset_mesh=Vector3(0, 0.89, 0)
+optimize_mesh=false
+force_disable_mesh_compression=true

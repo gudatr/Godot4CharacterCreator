@@ -1,0 +1,504 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2entn5fgmoqh"]
+
+[ext_resource type="Script" path="res://godot_character_creator/scripts/editor/CharacterEditorGUI.cs" id="1_c62u5"]
+
+[sub_resource type="GDScript" id="2"]
+script/source = "extends Camera3D
+var right_mouse_pressed = false
+var midle_mouse_pressed = false
+var speed_rot=0.005
+var default_translation = Vector3()
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	default_translation = $spt.position
+	pass # Replace with function body.
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+				right_mouse_pressed = true
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				right_mouse_pressed = false
+		if event.button_index == MOUSE_BUTTON_MIDDLE:
+			if event.pressed:
+				midle_mouse_pressed = true
+			else:
+				midle_mouse_pressed = false
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			$spt.position.z += speed_rot*5
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			$spt.position.z -= speed_rot*5
+	if event is InputEventMouseMotion:
+		if midle_mouse_pressed:
+			if (abs(event.relative.x) > abs(event.relative.y)):
+				$spt.position.x +=event.relative.x*speed_rot
+			else:
+				$spt.position.y -=event.relative.y*speed_rot
+		if right_mouse_pressed:
+			if (abs(event.relative.x) > abs(event.relative.y)):
+				$spt.rotate_y(event.relative.x*speed_rot)
+			else:
+				$spt.rotate_x(event.relative.y*speed_rot)
+
+
+
+func _on_reset_view_pressed():
+	$spt.position = default_translation
+	$spt.rotation_degrees = Vector3 (0,0,0)
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c62u5")
+
+[node name="cam" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0345633, 0.865932, 1.52344)
+current = true
+size = 1.5
+near = 0.01
+script = SubResource("2")
+
+[node name="spt" type="Node3D" parent="cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0303633, -0.898369, -1.43457)
+
+[node name="look_at_target" type="Node3D" parent="cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="morphs" type="TabContainer" parent="Control"]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 698.0
+offset_bottom = 1072.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+tab_alignment = 1
+
+[node name="Body" type="TabBar" parent="Control/morphs"]
+layout_mode = 2
+
+[node name="Head" type="TabBar" parent="Control/morphs"]
+visible = false
+layout_mode = 2
+
+[node name="Face" type="TabBar" parent="Control/morphs"]
+visible = false
+layout_mode = 2
+
+[node name="Eyes" type="TabBar" parent="Control/morphs"]
+visible = false
+layout_mode = 2
+
+[node name="Expressions" type="TabBar" parent="Control/morphs"]
+visible = false
+layout_mode = 2
+
+[node name="Other" type="TabBar" parent="Control/morphs"]
+visible = false
+layout_mode = 2
+
+[node name="Age" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 12.0
+offset_right = 120.0
+offset_bottom = 75.0
+text = "Age"
+
+[node name="Age_Child" type="Button" parent="Control/morphs/Other/Age"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 169.0
+offset_bottom = 98.0
+text = "Child"
+
+[node name="Age_Teen" type="Button" parent="Control/morphs/Other/Age"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 51.0
+offset_right = 391.0
+offset_bottom = 97.0
+text = "Teen"
+
+[node name="Age_Young" type="Button" parent="Control/morphs/Other/Age"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 53.0
+offset_right = 607.0
+offset_bottom = 99.0
+text = "Young
+"
+
+[node name="Age_Middleaged" type="Button" parent="Control/morphs/Other/Age"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 122.0
+offset_right = 263.0
+offset_bottom = 168.0
+text = "Middleaged"
+
+[node name="Age_Old" type="Button" parent="Control/morphs/Other/Age"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 122.0
+offset_right = 481.0
+offset_bottom = 168.0
+text = "Old"
+
+[node name="Sex" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 207.0
+offset_right = 120.0
+offset_bottom = 270.0
+text = "Sex"
+
+[node name="Sex_Male" type="Button" parent="Control/morphs/Other/Sex"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 169.0
+offset_bottom = 98.0
+text = "Male"
+
+[node name="Sex_Female" type="Button" parent="Control/morphs/Other/Sex"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 52.0
+offset_right = 391.0
+offset_bottom = 98.0
+text = "Female"
+
+[node name="Sex_Ambiguous" type="Button" parent="Control/morphs/Other/Sex"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 52.0
+offset_right = 606.0
+offset_bottom = 98.0
+text = "Ambiguous"
+
+[node name="Ethnicity" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 341.0
+offset_right = 140.0
+offset_bottom = 404.0
+text = "Ethnicity
+"
+
+[node name="Ethnicity_African" type="Button" parent="Control/morphs/Other/Ethnicity"]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 169.0
+offset_bottom = 101.0
+text = "African"
+
+[node name="Ethnicity_Asian" type="Button" parent="Control/morphs/Other/Ethnicity"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 55.0
+offset_right = 386.0
+offset_bottom = 101.0
+text = "Asian"
+
+[node name="Ethnicity_Caucasian" type="Button" parent="Control/morphs/Other/Ethnicity"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 55.0
+offset_right = 606.0
+offset_bottom = 101.0
+text = "Caucasian"
+
+[node name="brows" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 479.0
+offset_right = 136.0
+offset_bottom = 542.0
+text = "Brows
+"
+
+[node name="brows_slider" type="HSlider" parent="Control/morphs/Other/brows"]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 610.0
+offset_bottom = 100.0
+max_value = 3.0
+rounded = true
+
+[node name="eyes" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 598.0
+offset_right = 136.0
+offset_bottom = 661.0
+text = "Eyes
+"
+
+[node name="eyes_slider" type="HSlider" parent="Control/morphs/Other/eyes"]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 609.0
+offset_bottom = 100.0
+max_value = 7.0
+rounded = true
+
+[node name="hair" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 715.0
+offset_right = 120.0
+offset_bottom = 778.0
+text = "Hair"
+
+[node name="hair_scroll" type="ScrollContainer" parent="Control/morphs/Other/hair"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 280.0
+offset_bottom = 282.0
+
+[node name="hair_vbox" type="VBoxContainer" parent="Control/morphs/Other/hair/hair_scroll"]
+layout_mode = 2
+
+[node name="clothes" type="Label" parent="Control/morphs/Other"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 715.0
+offset_right = 453.0
+offset_bottom = 778.0
+text = "Clothes"
+
+[node name="clothes_scroll" type="ScrollContainer" parent="Control/morphs/Other/clothes"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 280.0
+offset_bottom = 282.0
+
+[node name="clothes_vbox" type="VBoxContainer" parent="Control/morphs/Other/clothes/clothes_scroll"]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -297.0
+offset_right = -297.0
+grow_horizontal = 0
+
+[node name="stop_speak" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 314.0
+offset_right = 286.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Stop Speaking
+"
+
+[node name="stop_focus" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 72.0
+offset_right = 286.0
+offset_bottom = 118.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Stop Focus
+"
+
+[node name="stop_animation" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 138.0
+offset_right = 287.0
+offset_bottom = 184.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Animate"
+
+[node name="animation" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 201.0
+offset_right = 286.0
+offset_bottom = 247.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Stop Animation"
+
+[node name="focus" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 18.0
+offset_right = 285.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Focus on Camera
+"
+
+[node name="speak" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 258.0
+offset_right = 286.0
+offset_bottom = 304.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Speak"
+
+[node name="random_gen" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 430.0
+offset_right = 281.0
+offset_bottom = 476.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Generate Random Face
+"
+
+[node name="Label" type="Label" parent="Container/random_gen"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -61.0
+offset_right = 279.0
+offset_bottom = -27.0
+text = "Randomness
+"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Container/random_gen/Label"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 55.0
+max_value = 1.0
+step = 0.0
+value = 1.0
+ticks_on_borders = true
+
+[node name="reset_appearance" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 487.0
+offset_right = 282.0
+offset_bottom = 533.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Reset Appearance"
+
+[node name="reset_view" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 545.0
+offset_right = 280.0
+offset_bottom = 591.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Reset View"
+
+[node name="save" type="Button" parent="Container"]
+layout_mode = 2
+offset_left = 151.0
+offset_top = 603.0
+offset_right = 279.0
+offset_bottom = 649.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Save"
+
+[node name="open" type="Button" parent="Container"]
+layout_mode = 2
+offset_top = 603.0
+offset_right = 128.0
+offset_bottom = 649.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+text = "Open"
+
+[node name="debug_checkbox" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 678.0
+offset_right = 278.0
+offset_bottom = 724.0
+text = "Debug Output"
+
+[node name="no_head" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 724.0
+offset_right = 278.0
+offset_bottom = 770.0
+text = "Remove Head"
+
+[node name="no_arms" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 770.0
+offset_right = 278.0
+offset_bottom = 816.0
+text = "Remove Arms"
+
+[node name="no_hands" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 816.0
+offset_right = 278.0
+offset_bottom = 862.0
+text = "Remove Hands"
+
+[node name="no_torso" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 862.0
+offset_right = 278.0
+offset_bottom = 908.0
+text = "Remove Torso"
+
+[node name="no_legs" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 908.0
+offset_right = 278.0
+offset_bottom = 954.0
+text = "Remove Legs"
+
+[node name="no_feet" type="CheckBox" parent="Container"]
+layout_mode = 0
+offset_top = 954.0
+offset_right = 278.0
+offset_bottom = 1000.0
+text = "Remove Feet"
+
+[node name="save_file" type="FileDialog" parent="."]
+position = Vector2i(560, 240)
+size = Vector2i(800, 600)
+access = 2
+filters = PackedStringArray("*.gcc")
+
+[node name="open_file" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(560, 240)
+size = Vector2i(800, 600)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.gcc")
+
+[connection signal="value_changed" from="Container/random_gen/Label/HSlider" to="." method="set_cartoonish"]
+[connection signal="pressed" from="Container/reset_view" to="cam" method="_on_reset_view_pressed"]
+[connection signal="pressed" from="Container/save" to="." method="OnSavePressed"]
+[connection signal="pressed" from="Container/open" to="." method="OnOpenPressed"]
+[connection signal="file_selected" from="save_file" to="." method="OnSaveFileSelected"]
+[connection signal="file_selected" from="open_file" to="." method="OnOpenFileSelected"]

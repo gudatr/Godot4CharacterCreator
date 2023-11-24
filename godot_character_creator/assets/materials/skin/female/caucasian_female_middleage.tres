@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dvesmo5e150u4"]
+
+[ext_resource type="Texture2D" uid="uid://3ur2ubhgfevp" path="res://godot_character_creator/assets/textures/skin/female/caucasian_female_middleage.png" id="1_u7tug"]
+[ext_resource type="Texture2D" uid="uid://bkpylwke1rujv" path="res://godot_character_creator/assets/textures/skin/details/skin_normalmap.tres" id="2_laage"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_u7tug")
+metallic = 0.2
+metallic_specular = 0.7
+roughness = 0.65
+normal_enabled = true
+normal_texture = ExtResource("2_laage")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.65
+subsurf_scatter_skin_mode = true

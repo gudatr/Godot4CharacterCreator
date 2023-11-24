@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ql4qqrrcxu5a"
+path="res://.godot/imported/lusekofta.obj-c0d545461c2e4d97c25f878bdae6fef9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lusekofta.obj-c0d545461c2e4d97c25f878bdae6fef9.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/clothes/lusekofta.obj"
+dest_files=["res://.godot/imported/lusekofta.obj-c0d545461c2e4d97c25f878bdae6fef9.mesh", "res://.godot/imported/lusekofta.obj-c0d545461c2e4d97c25f878bdae6fef9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.11, 0.11, 0.12)
+offset_mesh=Vector3(2.08165e-12, 0.83, 2.08165e-12)
+optimize_mesh=false
+force_disable_mesh_compression=true

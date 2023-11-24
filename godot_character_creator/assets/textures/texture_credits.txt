@@ -1,0 +1,28 @@
+Texture : Author : License
+
+eyes/blue_eyes : Nyloseth : CC0
+
+skin/female/asian_female_young : wolgade/MakeHuman Team : CC0
+skin/female/asian_female_middleage : wolgade/MakeHuman Team : CC0
+skin/female/asian_female_old : wolgade/MakeHuman Team : CC0
+
+skin/female/caucasian_female_young : wolgade/MakeHuman Team : CC0
+skin/female/caucasian_female_middleage : spamrakuen : CC0
+skin/female/caucasian_female_old : OnlyTheGhosts : CC0
+
+skin/female/african_female_young : wolgade/MakeHuman Team : CC0
+skin/female/african_female_middleage : wolgade/MakeHuman Team : CC0
+skin/female/african_female_old : wolgade/MakeHuman Team : CC0
+
+skin/male/asian_male_young : wolgade/MakeHuman Team : CC0
+skin/male/asian_male_middleage : wolgade/MakeHuman Team : CC0
+skin/male/asian_male_old : wolgade/MakeHuman Team : CC0
+
+skin/male/caucasian_male_young : wolgade/MakeHuman Team : CC0
+skin/male/caucasian_male_middleage : wolgade/MakeHuman Team : CC0
+skin/male/caucasian_male_old : wolgade/MakeHuman Team : CC0
+
+skin/male/african_male_young : wolgade/MakeHuman Team : CC0
+skin/male/african_male_middleage : Mindfront : CC0
+skin/male/african_male_old : wolgade/MakeHuman Team : CC0
+

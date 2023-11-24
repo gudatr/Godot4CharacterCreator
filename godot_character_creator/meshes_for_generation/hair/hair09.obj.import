@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjnkwodajd0p6"
+path="res://.godot/imported/hair09.obj-0e2ceaf19c9c615b5d8e416c11ff61f0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hair09.obj-0e2ceaf19c9c615b5d8e416c11ff61f0.mesh"]
+
+source_file="res://godot_character_creator/meshes_for_generation/hair/hair09.obj"
+dest_files=["res://.godot/imported/hair09.obj-0e2ceaf19c9c615b5d8e416c11ff61f0.mesh", "res://.godot/imported/hair09.obj-0e2ceaf19c9c615b5d8e416c11ff61f0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.1, 0.1, 0.1)
+offset_mesh=Vector3(0, 0.89, 0)
+optimize_mesh=false
+force_disable_mesh_compression=true

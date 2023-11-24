@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://mxgskl35kjop"]
+
+[ext_resource type="Texture2D" uid="uid://d2c1qaew4uk7k" path="res://godot_character_creator/assets/textures/clothes/male_jeans_01_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://hau1hbhlfuoe" path="res://godot_character_creator/assets/textures/clothes/male_jeans_01_ao.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dllemkpgym0hb" path="res://godot_character_creator/assets/textures/clothes/male_jeans_01_normals.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_texture = ExtResource("2")
+ao_texture_channel = 4
