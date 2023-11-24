@@ -688,7 +688,7 @@ namespace GCC
 		/// <param name="bodyBoneWeights"></param>
 		private void ProcessBodyMesh(out Dictionary<string, Array<Variant>> meshShapes, out Array<Vector3[]> processedBodyShapes, out Vector3[] bodyBaseForm, out Dictionary<string, int> bodyShapeNameIndex, out int[] bodyBones, out float[] bodyBoneWeights)
 		{
-			DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/materials/");
+			DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/materials/");
 
 			var blendShapes = new Array<Array<Vector3>>();
 			var shapeNameIndex = new Dictionary<string, int>();
@@ -705,7 +705,7 @@ namespace GCC
 
 			var mesh = new ArrayMesh();
 			mesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, meshArrays);
-			DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/meshes/body/");
+			DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/meshes/body/");
 			ResourceSaver.Save(mesh, "res://godot_character_creator/assets/meshes/body/body.mesh");
 			MakeScene("body/body");
 
@@ -823,7 +823,7 @@ namespace GCC
 				var mesh = new ArrayMesh();
 				mesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, meshArrays);
 
-				if (cloth.RFind("/") != -1) DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
+				if (cloth.RFind("/") != -1) DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
 				ResourceSaver.Save(mesh, "res://godot_character_creator/assets/meshes/" + cloth + ".mesh");
 				MakeScene(cloth);
 
@@ -872,7 +872,7 @@ namespace GCC
 				var vertexProximityMapping = GetProximityMapping(vertexArray, bodyBaseForm);
 				var mesh = new ArrayMesh();
 				mesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, arr);
-				if (cloth.RFind("/") != -1) DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
+				if (cloth.RFind("/") != -1) DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
 				ResourceSaver.Save(mesh, "res://godot_character_creator/assets/meshes/" + cloth + ".mesh");
 				MakeScene(cloth);
 
@@ -967,7 +967,7 @@ namespace GCC
 			for (var i = 0; i < length; i++)
 			{
 				var cloth = clothesGeneration[i];
-				if (cloth.RFind("/") != -1) DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
+				if (cloth.RFind("/") != -1) DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/meshes/" + cloth[..cloth.RFind("/")]);
 				ResourceSaver.Save(meshArray[i], "res://godot_character_creator/assets/meshes/" + cloth + ".mesh");
 				MakeScene(cloth);
 			}
@@ -979,7 +979,7 @@ namespace GCC
 		/// <param name="data"></param>
 		private void SaveData(Dictionary<string, Array<Variant>> data)
 		{
-			DirAccess.MakeDirAbsolute("res://godot_character_creator/blend_shape_data/");
+			DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/blend_shape_data/");
 
 			foreach (var dataPairs in data)
 			{
@@ -1083,7 +1083,7 @@ namespace GCC
 		/// <param name="cloth"></param>
 		private void MakeScene(string cloth)
 		{
-			if (cloth.RFind("/") != -1) DirAccess.MakeDirAbsolute("res://godot_character_creator/assets/materials/" + cloth[..cloth.RFind("/")]);
+			if (cloth.RFind("/") != -1) DirAccess.MakeDirRecursiveAbsolute("res://godot_character_creator/assets/materials/" + cloth[..cloth.RFind("/")]);
 
 			skin ??= ResourceLoader.Load<Skin>("res://godot_character_creator/assets/skins/body.tres");
 
