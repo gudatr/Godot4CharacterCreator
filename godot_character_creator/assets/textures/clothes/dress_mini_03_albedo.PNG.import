@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba0dga6kkd4mi"
-path.s3tc="res://.godot/imported/dress_mini_03_albedo.png-0ef18eddf5ca0147dabf6e84d71d0644.s3tc.ctex"
-path.etc2="res://.godot/imported/dress_mini_03_albedo.png-0ef18eddf5ca0147dabf6e84d71d0644.etc2.ctex"
+path.s3tc="res://.godot/imported/dress_mini_03_albedo.PNG-9f85a1bdd10139a03a98161c0ccf4355.s3tc.ctex"
+path.etc2="res://.godot/imported/dress_mini_03_albedo.PNG-9f85a1bdd10139a03a98161c0ccf4355.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://godot_character_creator/assets/textures/clothes/dress_mini_03_albedo.png"
-dest_files=["res://.godot/imported/dress_mini_03_albedo.png-0ef18eddf5ca0147dabf6e84d71d0644.s3tc.ctex", "res://.godot/imported/dress_mini_03_albedo.png-0ef18eddf5ca0147dabf6e84d71d0644.etc2.ctex"]
+source_file="res://godot_character_creator/assets/textures/clothes/dress_mini_03_albedo.PNG"
+dest_files=["res://.godot/imported/dress_mini_03_albedo.PNG-9f85a1bdd10139a03a98161c0ccf4355.s3tc.ctex", "res://.godot/imported/dress_mini_03_albedo.PNG-9f85a1bdd10139a03a98161c0ccf4355.etc2.ctex"]
 
 [params]
 

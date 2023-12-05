@@ -848,15 +848,15 @@ namespace GCC
 			};
 		}
 
-        /// <summary>
-        /// Processes meshes that are in <c>clothesBlendShapes</c>. These will have blend shape data generated based on the data of the body mesh and keep their own bone weights
-        /// </summary>
-        /// <param name="processedBodyShapes"></param>
-        /// <param name="bodyBaseForm"></param>
-        /// <param name="meshShapes"></param>
-        /// <param name="bodyShapeNameIndex"></param>
-        /// <returns></returns>
-        private async Task ClothesWithBlendshapesGeneration(Array<Vector3[]> processedBodyShapes, Vector3[] bodyBaseForm, Dictionary<string, Array<Variant>> meshShapes, Dictionary<string, int> bodyShapeNameIndex)
+		/// <summary>
+		/// Processes meshes that are in <c>clothesBlendShapes</c>. These will have blend shape data generated based on the data of the body mesh and keep their own bone weights
+		/// </summary>
+		/// <param name="processedBodyShapes"></param>
+		/// <param name="bodyBaseForm"></param>
+		/// <param name="meshShapes"></param>
+		/// <param name="bodyShapeNameIndex"></param>
+		/// <returns></returns>
+		private async Task ClothesWithBlendshapesGeneration(Array<Vector3[]> processedBodyShapes, Vector3[] bodyBaseForm, Dictionary<string, Array<Variant>> meshShapes, Dictionary<string, int> bodyShapeNameIndex)
 		{
 			clothesBlendShapes ??= new();
 
@@ -892,20 +892,20 @@ namespace GCC
 			}
 		}
 
-        /// <summary>
-        /// Processes meshes that are in <c>clothesGeneration</c>. These will have blend shape and bone data generated based on the data of the body mesh
-        /// </summary>
-        /// <param name="processedBodyShapes"></param>
-        /// <param name="bodyBaseForm"></param>
-        /// <param name="meshShapes"></param>
-        /// <param name="bodyShapeNameIndex"></param>
-        /// <param name="bodyBones"></param>
-        /// <param name="bodyBoneWeights"></param>
-        /// <param name="excludedBoneIdsEyelashes"></param>
-        /// <param name="excludedBoneIds"></param>
-        /// <param name="excludedBonesReplacement"></param>
-        /// <returns></returns>
-        private async Task ClothesWithFullGeneration(Array<Vector3[]> processedBodyShapes, Vector3[] bodyBaseForm, Dictionary<string, Array<Variant>> meshShapes, Dictionary<string, int> bodyShapeNameIndex, int[] bodyBones, float[] bodyBoneWeights, int[] excludedBoneIdsEyelashes, int[] excludedBoneIds, int excludedBonesReplacement)
+		/// <summary>
+		/// Processes meshes that are in <c>clothesGeneration</c>. These will have blend shape and bone data generated based on the data of the body mesh
+		/// </summary>
+		/// <param name="processedBodyShapes"></param>
+		/// <param name="bodyBaseForm"></param>
+		/// <param name="meshShapes"></param>
+		/// <param name="bodyShapeNameIndex"></param>
+		/// <param name="bodyBones"></param>
+		/// <param name="bodyBoneWeights"></param>
+		/// <param name="excludedBoneIdsEyelashes"></param>
+		/// <param name="excludedBoneIds"></param>
+		/// <param name="excludedBonesReplacement"></param>
+		/// <returns></returns>
+		private async Task ClothesWithFullGeneration(Array<Vector3[]> processedBodyShapes, Vector3[] bodyBaseForm, Dictionary<string, Array<Variant>> meshShapes, Dictionary<string, int> bodyShapeNameIndex, int[] bodyBones, float[] bodyBoneWeights, int[] excludedBoneIdsEyelashes, int[] excludedBoneIds, int excludedBonesReplacement)
 		{
 			clothesGeneration ??= new();
 			var arrayMeshesClothGenerationArray = new Dictionary<string, Godot.Collections.Array>();

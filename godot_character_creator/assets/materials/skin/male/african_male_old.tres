@@ -6,9 +6,9 @@
 [resource]
 transparency = 2
 albedo_texture = ExtResource("1_4s6wi")
-metallic = 0.2
+metallic = 0.1
 metallic_specular = 0.7
-roughness = 0.65
+roughness = 0.58
 normal_enabled = true
 normal_texture = ExtResource("2_laage")
 subsurf_scatter_enabled = true
