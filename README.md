@@ -58,14 +58,8 @@ If you have any questions, want to dicuss something or have an idea how to impro
 - [x] Code Documentation for functionality
 - [ ] Github Wiki for functionality & setup
 - [ ] Intro Video, showing off the creation example
-- [ ] Remakes of the videos from the old repo
 
-#### 6. Tutorials
-
-- [ ] Cloth creation
-- [ ] Animations
-
-#### 7. Content
+#### 6. Content
 
 - [ ] Include MakeHuman asset packs
 
