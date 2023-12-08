@@ -115,23 +115,21 @@ namespace GCC
             /// Removes parts of the <paramref name="albedo"/> and <paramref name="normal"/> images based on the <paramref name="bodyPartsHidden"/> configuration.
             /// The mapping for this is based on the body_parts texture.
             /// </summary>
-            private void CutOutBodyPartsHidden(Image albedo, Image normal, BodyPartsHidden bodyPartsHidden)
+            private void CutOutBodyPartsHidden(Image albedo, BodyPartsHidden bodyPartsHidden)
             {
-                if (bodyPartsHidden == BodyPartsHidden.None || albedo == null && normal == null) return;
+                if (bodyPartsHidden == BodyPartsHidden.None || albedo == null) return;
 
                 var scaleFactor = AtlasSize / 256;
 
                 var noColor = new Color(0f, 0f, 0f, 0f);
 
                 var removeImageAlbedo = Image.Create(scaleFactor, scaleFactor, false, albedo?.GetFormat() ?? Image.Format.Rgba8);
-                var removeImageNormal = Image.Create(scaleFactor, scaleFactor, false, normal?.GetFormat() ?? Image.Format.Rgba8);
 
                 for (var x = 0; x < scaleFactor; x++)
                 {
                     for (var y = 0; y < scaleFactor; y++)
                     {
                         removeImageAlbedo.SetPixel(x, y, noColor);
-                        removeImageNormal.SetPixel(x, y, noColor);
                     }
                 }
 
@@ -252,7 +250,7 @@ namespace GCC
 
                     if (this == character.Body)
                     {
-                        CutOutBodyPartsHidden(atlasAlbedoImage, atlasNormalImage, character.BodyPartsHidden);
+                        CutOutBodyPartsHidden(atlasAlbedoImage, character.BodyPartsHidden);
                     }
 
                     if (albedo != null)
