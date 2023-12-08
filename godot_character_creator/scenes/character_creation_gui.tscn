@@ -481,6 +481,14 @@ offset_right = 278.0
 offset_bottom = 1000.0
 text = "Remove Feet"
 
+[node name="fps" type="Label" parent="Container"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1008.0
+offset_right = 103.0
+offset_bottom = 1042.0
+text = "FPS: 000"
+
 [node name="save_file" type="FileDialog" parent="."]
 position = Vector2i(560, 240)
 size = Vector2i(800, 600)
