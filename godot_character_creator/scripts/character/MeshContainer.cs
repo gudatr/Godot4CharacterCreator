@@ -165,6 +165,8 @@ namespace GCC
             /// </summary>
             public async Task RegenerateAtlas()
             {
+                var debugStopwatch = System.Diagnostics.Stopwatch.StartNew();
+
                 if (atlasIsGenerating || overlays.Count == 0 && (this != character.Body || character.BodyPartsHidden == BodyPartsHidden.None && atlasMaterial == null))
                 {
                     instance?.SetDeferred("material_override", material);
@@ -175,8 +177,13 @@ namespace GCC
 
                 var finished = false; //Necessary so we don't get race conditions and wait forever
 
+                if (character.debug) GD.Print("RegenerateAtlas - Task enqueued: " + debugStopwatch.Elapsed.TotalMilliseconds);
+
                 System.Threading.ThreadPool.QueueUserWorkItem((_) =>
                 {
+
+                    if (character.debug) GD.Print("RegenerateAtlas - Task running: " + debugStopwatch.Elapsed.TotalMilliseconds);
+
                     var normal = material.NormalTexture;
                     var albedo = material.AlbedoTexture;
 
@@ -248,9 +255,14 @@ namespace GCC
                         }
                     }
 
+
+                    if (character.debug) GD.Print("RegenerateAtlas - Atlas processing: " + debugStopwatch.Elapsed.TotalMilliseconds);
+
                     if (this == character.Body)
                     {
                         CutOutBodyPartsHidden(atlasAlbedoImage, character.BodyPartsHidden);
+
+                        if (character.debug) GD.Print("RegenerateAtlas - Body part cutout: " + debugStopwatch.Elapsed.TotalMilliseconds);
                     }
 
                     if (albedo != null)
@@ -268,6 +280,8 @@ namespace GCC
                         atlasMaterial.NormalTexture = atlasNormal;
                     }
 
+                    if (character.debug) GD.Print("RegenerateAtlas - Mipmap generation: " + debugStopwatch.Elapsed.TotalMilliseconds);
+
                     instance?.SetDeferred("material_override", atlasMaterial);
 
                     atlasIsGenerating = false;
@@ -275,6 +289,8 @@ namespace GCC
                     finished = true;
 
                     GC.Collect(GC.MaxGeneration);
+
+                    if (character.debug) GD.Print("RegenerateAtlas - finished: " + debugStopwatch.Elapsed.TotalMilliseconds);
                 });
 
                 while (!finished)
