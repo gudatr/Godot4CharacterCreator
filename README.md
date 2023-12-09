@@ -1,17 +1,23 @@
 # Godot 4 Character Creator
 
-![image](https://github.com/gudatr/Godot4CharacterCreator/blob/main/Avatar.png?raw=true)
+![image](https://github.com/gudatr/Godot4CharacterCreator/assets/72663639/5f2db47f-17cd-4e9b-81be-b4ecbdb0512d)
 
 ### Introduction
 
-A 3D character creator for Godot 4.2+ based on lexpartizan/Go_MakeHuman_dot
+A 3D character creator for Godot 4.2+ based on lexpartizan/Go_MakeHuman_dot and assets from the MakeHuman (http://www.makehumancommunity.org/) project.
 
-The system is currently capable of all the things the original Godot 3.X system is, adds several features on top and is generally a lot faster when morphing.
+The system is currently capable of all the things the original Godot 3.X system is, adds several features on top and is generally a lot faster and memory efficient.
 For upcoming features and future development see the following roadmap.
+Please excuse the partially janky hair and clothing as working on the core features currently has priority over content.
+In case you want to fix the existing content or add something new yourself, contributions are greatly appreciated.
+Please see the Contributions section beforehand.
 
 ### Initial setup & guidance
 
 Please consult the repository's wiki for further information.
+Be sure to thoroughly read it and follow every step.
+The wiki will also provide you with tips on how to integrate the project into your game.
+While the project's aim is also to be as beginner friendly as possible, the past has shown that not taking your time while setting everything up can be frustrating nonetheless.
 
 If you have any questions, want to dicuss something or have an idea how to improve the project, please check out the dicussions page.
 
@@ -56,7 +62,7 @@ If you have any questions, want to dicuss something or have an idea how to impro
 #### 5. Documentation
 
 - [x] Code Documentation for functionality
-- [ ] Github Wiki for functionality & setup
+- [x] Github Wiki for functionality & setup
 - [ ] Intro Video, showing off the creation example
 
 #### 6. Content
@@ -80,6 +86,6 @@ It only uses assets licensed under CC0 by the original MakeHuman Team / Contribu
 The project itself is licensed under MIT.
 Where applicable, additional license information is provided.
 
-##### All these licenses allow at least closed source usage with credits and license visible in your product.
+##### All these licenses allow at least closed source usage with approriate credits and license visible in your product.
 
 
