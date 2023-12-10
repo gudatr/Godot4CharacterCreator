@@ -437,7 +437,6 @@ namespace GCC
                 meshContainer.meshData[(int)Mesh.ArrayType.Normal] = CalculateNormals(meshContainer.indexes, meshContainer.vertices);
                 arrayMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, meshContainer.meshData);
                 arrayMesh.RegenNormalMaps();
-
                 meshContainer.instance.SetDeferred("mesh", arrayMesh);
 
                 meshContainer.wasAltered = false;
@@ -452,15 +451,15 @@ namespace GCC
 
         private Vector3[] CalculateNormals(int[] indexes, Vector3[] vertices)
         {
-            var normals = new Vector3[vertices.Length];
-            int trisCount = indexes.Length / 3;
+            var length = vertices.Length;
+            var indexLength = indexes.Length;
+            var normals = new Vector3[length];
 
-            for (int i = 0; i < trisCount; i++)
+            for (int i = 0; i < indexLength; i += 3)
             {
-                int normalTriangleIndex = i * 3;
-                int vertexIndexA = indexes[normalTriangleIndex];
-                int vertexIndexB = indexes[normalTriangleIndex + 1];
-                int vertexIndexC = indexes[normalTriangleIndex + 2];
+                int vertexIndexA = indexes[i];
+                int vertexIndexB = indexes[i + 1];
+                int vertexIndexC = indexes[i + 2];
 
                 Vector3 triangleNormal = SurfaceNormalFormIndices(vertexIndexA, vertexIndexB, vertexIndexC, vertices);
 
@@ -469,7 +468,7 @@ namespace GCC
                 normals[vertexIndexC] += triangleNormal;
             }
 
-            for (int i = 0; i < normals.Length; i++)
+            for (int i = 0; i < length; i++)
             {
                 normals[i] = normals[i].Normalized();
             }
