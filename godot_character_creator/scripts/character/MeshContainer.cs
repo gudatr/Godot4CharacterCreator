@@ -17,6 +17,7 @@ namespace GCC
 
             public string name;
             public Vector3[] vertices;
+            public int[] indexes;
             public MeshInstance3D instance;
             public Godot.Collections.Array meshData;
             public bool wasAltered;
