@@ -48,12 +48,18 @@ namespace GCC
 
         /// <summary>
         /// Changes how many frames have to pass for the morphed mesh to be updated.
-        /// In most cases you can set this to 2 or higher to improve performance when processing speech.
-        /// Only use 1 as a value if you want to realtime-morph the mesh, e.g. a character transforms, and the game's focus is on that.
+        /// Set this to 2 or higher to improve performance when morphing.
+        /// Use 1 as a value if you want to realtime-morph the mesh, e.g. a character transforms or facial morphs, and the game's focus is on that.
         /// </summary>
         public int framesToUpdate = 2;
 
         private int updateIteration = 0;
+
+        /// <summary>
+        /// Specifies if the normals should be recalculated.
+        /// Set this to false outside of character creation or focused morphing as it slows down mesh regeneration drastically.
+        /// </summary>
+        public bool updateNormals = true;
 
         public Sex Sex { get; private set; }
         public Ethnicity Ethnicity { get; private set; }
@@ -434,9 +440,9 @@ namespace GCC
 
                 ArrayMesh arrayMesh = new();
                 meshContainer.meshData[(int)Mesh.ArrayType.Vertex] = meshContainer.vertices;
-                meshContainer.meshData[(int)Mesh.ArrayType.Normal] = CalculateNormals(meshContainer.indexes, meshContainer.vertices);
+                if(updateNormals) meshContainer.meshData[(int)Mesh.ArrayType.Normal] = CalculateNormals(meshContainer.indexes, meshContainer.vertices);
                 arrayMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, meshContainer.meshData);
-                arrayMesh.RegenNormalMaps();
+                if (updateNormals) arrayMesh.RegenNormalMaps();
                 meshContainer.instance.SetDeferred("mesh", arrayMesh);
 
                 meshContainer.wasAltered = false;
