@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://5itbx55u4rci" path="res://godot_character_creator/assets/textures/body/eyes_albedo.png" id="1_a7u4r"]
 
 [resource]
+shading_mode = 2
 albedo_texture = ExtResource("1_a7u4r")
-metallic = 0.17
-metallic_specular = 0.3
-roughness = 0.23
+metallic = 0.01
+metallic_specular = 0.85
+roughness = 0.3
