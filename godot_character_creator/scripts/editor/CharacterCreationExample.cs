@@ -7,11 +7,11 @@ namespace GCC
 	{
 		public async override void _Ready()
 		{
-			var creationGUI = (PackedScene)ResourceLoader.Load("res://godot_character_creator/scenes/character_creation_gui.tscn");
+			var creationGUI = (PackedScene)ResourceLoader.Load(CharacterData.resourceBasePath+"/scenes/character_creation_gui.tscn");
 			CharacterEditorGUI instance = creationGUI.Instantiate() as CharacterEditorGUI;
 			AddChild(instance);
 
-			var characterBase = (PackedScene)ResourceLoader.Load("res://godot_character_creator/scenes/character_base.tscn");
+			var characterBase = (PackedScene)ResourceLoader.Load(CharacterData.resourceBasePath+"/scenes/character_base.tscn");
 			CharacterBase character = characterBase.Instantiate() as CharacterBase;
 
 			instance.SetCharacter(character);

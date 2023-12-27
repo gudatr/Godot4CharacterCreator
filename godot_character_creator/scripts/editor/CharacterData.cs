@@ -10,6 +10,12 @@ namespace GCC
 	///</summary>
 	public partial class CharacterData : Node
 	{
+
+		///<summary>
+		///Override this before using the character creator if you are using the project as a git submodule for easy updates
+		///</summary>
+		public static string resourceBasePath = "res://godot_character_creator";
+
 		public readonly static ConcurrentDictionary<string, Array<Vector3[]>> MeshShapes = new();
 		public readonly static ConcurrentDictionary<string, Array<int[]>> MeshShapesIndexes = new();
 		public readonly static ConcurrentDictionary<string, Dictionary<string, int>> ShapeNameIndexes = new();
@@ -57,7 +63,7 @@ namespace GCC
 			{
 				var clothNameEscaped = cloth.Replace("/", "_");
 				var debugStopwatch = System.Diagnostics.Stopwatch.StartNew();
-				var file = FileAccess.OpenCompressed("res://godot_character_creator/blend_shape_data/" + clothNameEscaped + ".txt", FileAccess.ModeFlags.Read, FileAccess.CompressionMode.Zstd);
+				var file = FileAccess.OpenCompressed(CharacterData.resourceBasePath+"/blend_shape_data/" + clothNameEscaped + ".txt", FileAccess.ModeFlags.Read, FileAccess.CompressionMode.Zstd);
 				var dataFromFile = (Array)file.GetVar();
 
 				MeshShapes[cloth] = (Array<Vector3[]>)dataFromFile[ShapeFileKeys.BLEND_SHAPES];

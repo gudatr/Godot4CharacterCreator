@@ -105,7 +105,7 @@ namespace GCC
         /// </summary>
         private void LoadHiddenPixelsForBodyParts()
         {
-            var image = ResourceLoader.Load("res://godot_character_creator/meshes_for_generation/body_parts.png") as Texture2D;
+            var image = ResourceLoader.Load(CharacterData.resourceBasePath+"/meshes_for_generation/body_parts.png") as Texture2D;
             var imageData = image.GetImage();
 
             for (var x = 0; x < 256; x++)
@@ -776,7 +776,7 @@ namespace GCC
             {
                 try
                 {
-                    var clothTaken = (PackedScene)ResourceLoader.Load("res://godot_character_creator/assets/meshes/" + (clothAlias == "" ? cloth : clothAlias) + ".tscn");
+                    var clothTaken = (PackedScene)ResourceLoader.Load(CharacterData.resourceBasePath+"/assets/meshes/" + (clothAlias == "" ? cloth : clothAlias) + ".tscn");
 
                     CharacterData.LoadCloth(cloth, debug);
 
@@ -857,7 +857,7 @@ namespace GCC
 
                             if (!bodyBaseMaterials.TryGetValue(materialString, out StandardMaterial3D material))
                             {
-                                var path = "res://godot_character_creator/assets/materials/skin/" + sexString + "/" + ethnicityString + "_" + sexString + "_" + ageString + ".tres";
+                                var path = CharacterData.resourceBasePath+"/assets/materials/skin/" + sexString + "/" + ethnicityString + "_" + sexString + "_" + ageString + ".tres";
                                 material = ResourceLoader.Load(path) as StandardMaterial3D;
                             }
 

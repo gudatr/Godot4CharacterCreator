@@ -46,7 +46,7 @@ namespace GCC
             var expressionsIndex = 0;
             var bodyIndex = 0;
 
-            var morphSlider = (PackedScene)ResourceLoader.Load("res://godot_character_creator/scenes/character_creation_morph_slider.tscn");
+            var morphSlider = (PackedScene)ResourceLoader.Load(CharacterData.resourceBasePath+"/scenes/character_creation_morph_slider.tscn");
 
             var ageChildButton = morphBase.FindChild("Age_Child", true) as Button;
             var ageTeenButton = morphBase.FindChild("Age_Teen", true) as Button;
@@ -190,7 +190,7 @@ namespace GCC
             noFeet.Pressed += () => { if (noFeet.ButtonPressed) character.HideBodyParts(BodyPartsHidden.Feet); else character.ShowBodyParts(BodyPartsHidden.Feet); };
 
             var speak = FindChild("speak", true) as Button;
-            var audio = ResourceLoader.Load("res://godot_character_creator/assets/audio/lorem_ipsum.mp3") as AudioStream;
+            var audio = ResourceLoader.Load(CharacterData.resourceBasePath+"/assets/audio/lorem_ipsum.mp3") as AudioStream;
             speak.Pressed += () => character.ExpressionPlayer.Speak(audio, true, () => GD.Print("Speak callback"), 0.15f);
 
             var stopSpeak = FindChild("stop_speak", true) as Button;
@@ -222,7 +222,7 @@ namespace GCC
             var cartoonishSlider = random.FindChild("HSlider") as HSlider;
             cartoonishSlider.Connect("value_changed", Callable.From((Variant _) => SetCartoonish((float)cartoonishSlider.Value)));
 
-            var hair = DirAccess.GetFilesAt("res://godot_character_creator/assets/meshes/hair");
+            var hair = DirAccess.GetFilesAt(CharacterData.resourceBasePath+"/assets/meshes/hair");
             var hairVBox = FindChild("hair_vbox");
 
             foreach (var hair_cloth in hair)
@@ -236,7 +236,7 @@ namespace GCC
                 hairVBox.AddChild(checkbox);
             }
 
-            var clothes = DirAccess.GetFilesAt("res://godot_character_creator/assets/meshes/clothes");
+            var clothes = DirAccess.GetFilesAt(CharacterData.resourceBasePath+"/assets/meshes/clothes");
             var clothesVBox = FindChild("clothes_vbox");
 
             foreach (var clothes_cloth in clothes)
@@ -347,13 +347,13 @@ namespace GCC
                     await character.RemoveOverlay("body/body", "brows");
                     break;
                 case 1:
-                    await character.AddOrReplaceOverlay("body/body", "brows", "res://godot_character_creator/assets/materials/overlays/brows01.tres");
+                    await character.AddOrReplaceOverlay("body/body", "brows", CharacterData.resourceBasePath+"/assets/materials/overlays/brows01.tres");
                     break;
                 case 2:
-                    await character.AddOrReplaceOverlay("body/body", "brows", "res://godot_character_creator/assets/materials/overlays/brows02.tres");
+                    await character.AddOrReplaceOverlay("body/body", "brows", CharacterData.resourceBasePath+"/assets/materials/overlays/brows02.tres");
                     break;
                 default:
-                    await character.AddOrReplaceOverlay("body/body", "brows", "res://godot_character_creator/assets/materials/overlays/brows03.tres");
+                    await character.AddOrReplaceOverlay("body/body", "brows", CharacterData.resourceBasePath+"/assets/materials/overlays/brows03.tres");
                     break;
             }
         }
@@ -363,31 +363,31 @@ namespace GCC
             switch (value)
             {
                 case 0:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/brown_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/brown_eyes.tres");
                     break;
                 case 1:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/amber_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/amber_eyes.tres");
                     break;
                 case 2:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/yellow_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/yellow_eyes.tres");
                     break;
                 case 3:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/green_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/green_eyes.tres");
                     break;
                 case 4:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/turquoise_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/turquoise_eyes.tres");
                     break;
                 case 5:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/blue_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/blue_eyes.tres");
                     break;
                 case 6:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/grey_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/grey_eyes.tres");
                     break;
                 case 7:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/red_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/red_eyes.tres");
                     break;
                 default:
-                    await character.ChangeBaseMaterial("body/eyes", "res://godot_character_creator/assets/materials/eyes/brown_eyes.tres");
+                    await character.ChangeBaseMaterial("body/eyes", CharacterData.resourceBasePath+"/assets/materials/eyes/brown_eyes.tres");
                     break;
             }
         }

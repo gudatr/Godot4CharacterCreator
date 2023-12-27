@@ -1,11 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cerod1vesxm4h"]
 
-[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/hair/hair05_albedo.png" id="1_kb8pl"]
-[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/hair/hair05_normals.png" id="2_eijse"]
+[ext_resource type="Texture2D" uid="uid://dbjgsabxb8puv" path="res://godot_character_creator/assets/textures/hair/hair05_albedo.png" id="1_kb8pl"]
+[ext_resource type="Texture2D" uid="uid://x04pasgk4q1b" path="res://godot_character_creator/assets/textures/hair/hair05_normals.png" id="2_eijse"]
 
 [resource]
 transparency = 2
-alpha_scissor_threshold = 0.5
+alpha_scissor_threshold = 0.0
 alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_kb8pl")
