@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b0lvblqlq8d5j"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://5itbx55u4rci" path="res://godot_character_creator/assets/textures/body/eyes_albedo.png" id="1_a7u4r"]
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/body/eyes_albedo.png" id="1_a7u4r"]
 
 [resource]
 shading_mode = 2

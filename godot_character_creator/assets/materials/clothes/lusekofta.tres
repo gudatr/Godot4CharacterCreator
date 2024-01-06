@@ -1,9 +1,12 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3]
 
 [ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/lusekofta_albedo.png" id="1_43e0f"]
+[ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/lusekofta_metallic.png" id="2_3tt6y"]
 [ext_resource type="Texture2D" path="res://godot_character_creator/assets/textures/clothes/lusekofta_normals.png" id="2_56asm"]
 
 [resource]
 albedo_texture = ExtResource("1_43e0f")
+metallic = 1.0
+metallic_texture = ExtResource("2_3tt6y")
 normal_enabled = true
 normal_texture = ExtResource("2_56asm")

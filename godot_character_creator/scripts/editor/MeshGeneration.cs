@@ -1090,7 +1090,10 @@ namespace GCC
 			var path = CharacterData.resourceBasePath+"/assets/meshes/" + cloth;
 			var albedoPath = CharacterData.resourceBasePath+"/assets/textures/" + cloth + "_albedo.png";
 			var normalsPath = CharacterData.resourceBasePath+"/assets/textures/" + cloth + "_normals.png";
-			var materialPath = CharacterData.resourceBasePath+"/assets/materials/" + cloth + ".tres";
+			var aoPath = CharacterData.resourceBasePath + "/assets/textures/" + cloth + "_ao.png";
+			var roughnessPath = CharacterData.resourceBasePath + "/assets/textures/" + cloth + "_roughness.png";
+			var metallicPath = CharacterData.resourceBasePath + "/assets/textures/" + cloth + "_metallic.png";
+			var materialPath = CharacterData.resourceBasePath + "/assets/materials/" + cloth + ".tres";
 			var mesh = ResourceLoader.Load(path + ".mesh") as Mesh;
 
 			var material = ResourceLoader.Exists(materialPath) ? ResourceLoader.Load(materialPath) as StandardMaterial3D : new StandardMaterial3D();
@@ -1105,6 +1108,25 @@ namespace GCC
 				material.NormalEnabled = true;
 				material.NormalTexture = ResourceLoader.Load(normalsPath) as Texture2D;
 			}
+
+			if (ResourceLoader.Exists(metallicPath))
+			{
+				if (material.MetallicTexture == null) material.Metallic = 1f;
+				material.MetallicTexture = ResourceLoader.Load(metallicPath) as Texture2D;
+			}
+
+			if (ResourceLoader.Exists(aoPath))
+			{
+				material.AOEnabled = true;
+				material.AOTexture = ResourceLoader.Load(aoPath) as Texture2D;
+			}
+
+			if (ResourceLoader.Exists(roughnessPath))
+			{
+				if (material.RoughnessTexture == null) material.Roughness = 1f;
+				material.RoughnessTexture = ResourceLoader.Load(roughnessPath) as Texture2D;
+			}
+
 
 			ResourceSaver.Save(material, materialPath);
 			material = ResourceLoader.Load(materialPath) as StandardMaterial3D;
